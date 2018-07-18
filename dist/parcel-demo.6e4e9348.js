@@ -103,10 +103,44 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   // Override the current require with this new one
   return newRequire;
-})({"index.js":[function(require,module,exports) {
+})({"module-1.js":[function(require,module,exports) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+exports.default = function () {
+    console.log('1');
+};
+},{}],"module-2.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+exports.default = function () {
+    console.log(2);
+};
+},{}],"index.js":[function(require,module,exports) {
+'use strict';
+
+var _module = require('./module-1');
+
+var _module2 = _interopRequireDefault(_module);
+
+var _module3 = require('./module-2');
+
+var _module4 = _interopRequireDefault(_module3);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+(0, _module2.default)();
+(0, _module4.default)();
 console.log("hello world");
 var a = 1;
-},{}],"C:\\Users\\Administrator\\AppData\\Roaming\\npm\\node_modules\\parcel-bundler\\lib\\builtins\\hmr-runtime.js":[function(require,module,exports) {
+},{"./module-1":"module-1.js","./module-2":"module-2.js"}],"C:\\Users\\Administrator\\AppData\\Roaming\\npm\\node_modules\\parcel-bundler\\lib\\builtins\\hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -135,7 +169,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '59500' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '4848' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
