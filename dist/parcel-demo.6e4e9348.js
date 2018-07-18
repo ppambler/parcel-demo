@@ -189,6 +189,11 @@ module.exports = reloadCSS;
 var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
+},{"_css_loader":"C:\\Users\\Administrator\\AppData\\Roaming\\npm\\node_modules\\parcel-bundler\\lib\\builtins\\css-loader.js"}],"main.scss":[function(require,module,exports) {
+
+var reloadCSS = require('_css_loader');
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
 },{"_css_loader":"C:\\Users\\Administrator\\AppData\\Roaming\\npm\\node_modules\\parcel-bundler\\lib\\builtins\\css-loader.js"}],"index.js":[function(require,module,exports) {
 'use strict';
 
@@ -202,13 +207,15 @@ var _module4 = _interopRequireDefault(_module3);
 
 require('./test.css');
 
+require('./main.scss');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _module2.default)();
 (0, _module4.default)();
 console.log("hello world");
 var a = 1;
-},{"./module-1":"module-1.js","./module-2":"module-2.js","./test.css":"test.css"}],"C:\\Users\\Administrator\\AppData\\Roaming\\npm\\node_modules\\parcel-bundler\\lib\\builtins\\hmr-runtime.js":[function(require,module,exports) {
+},{"./module-1":"module-1.js","./module-2":"module-2.js","./test.css":"test.css","./main.scss":"main.scss"}],"C:\\Users\\Administrator\\AppData\\Roaming\\npm\\node_modules\\parcel-bundler\\lib\\builtins\\hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -237,7 +244,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '5434' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '8233' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
